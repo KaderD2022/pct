@@ -318,85 +318,117 @@
             </div>
         </div>
     </header>
-
-
-    <section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
+    <section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h2> <u>MALADIE</u> </h2>
+                    <h2>Deplacement a ALLAKRO</h2>
                     <ol class="breadcrumb greylinks">
-                        <li class="inactive"> <a href="index.php">ACCUEIL</a>
-                        <li class="active">MALADIES</li>
+                        <li> <a href="index.html">
+                                Home
+                            </a> </li>
+                        <li> <a href="#">Anemagements</a> </li>
+                        <li class="active">Dénemagement</li>
                     </ol>
-
                 </div>
             </div>
         </div>
     </section>
 
-	<section class="ls section_padding_top_100 section_padding_bottom_100">
+
+			
+    <section class="ls section_padding_top_100 section_padding_bottom_100">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12">
-                    <div class="row">
-    
-    <!-- ici commence le php -->
-                        {% for item in items %}
-                        <div class="col-sm-6">
-                            <h3>{{ item.name }}</h3>
-                            <p>{{ item.symptoms }}</p>
-                         <p>{{ item.traitements }}</p>
-                        </div>
-                        {% endfor %}
-                        {% for  epidemie in epidemies %}
-                        
-                        <div class="col-sm-6">
-                            <h3>{{ epidemie.name }}</h3>
-                            <p>{{ epidemie.symptoms }}</p>
-                         <p>{{ epidemie.traitements }}</p>
-                         <p>{{ epidemie.date_debut }}</p>
-                         <p>{{ epidemie.date_fin }}</p>
-                         <p>{{ epidemie.nombre_cas }}</p>
-                         <p>{{ epidemie.nombre_mort }}</p>
-                        </div>
-                        {% endfor %}
+                <div class="text-center col-sm-12 ">
+                    <div class="clearfix"></div>
+                    <div class="table-responsive">
+                        <table class="table_template darklinks" id="timetable">
+                            <thead>
+                                <h2>Anemagements</h2>
+                                <tr>
+                                    <th>Nom & prenom</th>
+                                    <th>Sexe</th>
+                                    <th>Function</th>
+                                    <th>Quartier d'origine</th>
+                                    <th>Date de naissances</th>
+                                    <th>Mode d'habitation</th>
+                                    <th>Nom du pere</th>
+                                    <th>Nom de la mere</th>
+                                    <th>Lieu d'habitation</th>
+                                    
+                                </tr>
+                            </thead>
 
-                        {% comment %} <div class="col-sm-6">
-                            <h3>Paludisme</h3>
-                            <p>SYMPTOMES: corps chaud, mal de tête, vertige..</p>
-                         <p>TRAITEMENTS: Liatère, paluMax..</p>
-                        </div> {% endcomment %}
-    
-    
+                            <tbody>
+                                 <!-- ici commence le php -->
+                                 {% for finished in finisheds %}                     
+                                    <td> <a href="event-single-left.html" class="meetings">{{ finished.name}}</a> </td>
+                                    
+                                    <td> <a href="event-single-left.html" class="meetings">{{ finished.gender}}</a> </td>
+                                    
+                                    <td> <a href="event-single-left.html" class="">{{ finished.function}}</a> </td>
+                                    <td>{{ finished.origin}}</td>
+                                    <td>{{ finished.date_of_birth}}</td>
+                                    <td>{{ finished.Type_of_accommodation_on_arrival}}</td>
+                                    <td>{{ finished.name_of_father}}</td>
+                                    <td>{{ finished.name_of_mother}}</td>
+                                    <td>{{ finished.dwelling_place }}</td>
+                                </tr>
+                                <tr>	
+                                </tr>
+                                {% endfor %}      
+
+                            <!-- Fin php -->
+                            </tbody>
+                    
+
+                        </table>
+                        <table class="table_template darklinks" id="timetable">
+                            <thead>
+                                <h2>Dénemagement</h2>
+                                <tr>
+                                    <th>Nom & prenom</th>
+                                    <th>Sexe</th>
+                                    <th>Function</th>
+                                    <th>Lieu d'habitation</th>
+                                    <th>Lieu de naissances</th>
+
+                                    <th>Nouvelle destination</th>
+                                    
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                 <!-- ici commence le php -->
+                                 {% for moved in moveds %}                     
+                                    <td> <a href="event-single-left.html" class="meetings">{{ moved.name}}</a> </td>
+                                    
+                                    <td> <a href="event-single-left.html" class="meetings">{{ moved.gender}}</a> </td>
+                                    
+                                    <td> <a href="event-single-left.html" class="">{{ moved.function}}</a> </td>
+                                    <td>{{ moved.date_of_birth}}</td>
+                                    <td>{{ moved.dwelling_place }}</td>
+                                    <td>{{ moved.New_destination }}</td>
+                                </tr>
+                                <tr>	
+                                </tr>
+                                {% endfor %}      
+
+                            <!-- Fin php -->
+                            </tbody>
+                    
+
+                        </table>
+
+
                     </div>
+                </div>
             </div>
         </div>
-    </section>		
-
+    </section>
 </div>
 <!-- eof #box_wrapper -->
 </div>
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

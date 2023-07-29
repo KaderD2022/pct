@@ -342,15 +342,7 @@
                     <div class="row">
     
     <!-- ici commence le php -->
-                        {% for item in items %}
-                        <div class="col-sm-6">
-                            <h3>{{ item.name }}</h3>
-                            <p>{{ item.symptoms }}</p>
-                         <p>{{ item.traitements }}</p>
-                        </div>
-                        {% endfor %}
                         {% for  epidemie in epidemies %}
-                        
                         <div class="col-sm-6">
                             <h3>{{ epidemie.name }}</h3>
                             <p>{{ epidemie.symptoms }}</p>
@@ -362,11 +354,6 @@
                         </div>
                         {% endfor %}
 
-                        {% comment %} <div class="col-sm-6">
-                            <h3>Paludisme</h3>
-                            <p>SYMPTOMES: corps chaud, mal de tête, vertige..</p>
-                         <p>TRAITEMENTS: Liatère, paluMax..</p>
-                        </div> {% endcomment %}
     
     
                     </div>
@@ -379,24 +366,3 @@
 </div>
 
 {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

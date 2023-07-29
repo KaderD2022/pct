@@ -7,10 +7,11 @@ from .models import Birth, Death
 
 def naissance_view(request):
     naissances = Birth.objects.all()
-    return render(request, 'etat_de_vie/etat_de_vie.html', {'naissances': naissances}) 
+    deces = Death.objects.all()
+    return render(request, 'etat_de_vie/etat_de_vie.html', {'naissances': naissances, 'deces': deces}) 
     
 
-def deces_view(request):
-    deces = Death.objects.all()
-    return render(request, 'etat_de_vie/etat_de_vie.html', {'deces': deces }) 
+# def deces_view(request):
+#     deces = Death.objects.all()
+#     return render(request, 'etat_de_vie/etat_de_vie.html', {'deces': deces }) 
     

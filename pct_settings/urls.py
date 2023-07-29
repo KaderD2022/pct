@@ -27,4 +27,7 @@ urlpatterns = [
     path('centre_sante/', include('centre_sante.urls')),
     path('projet/', include('project.urls')),
     path('naissances/', include('etat_de_vie.urls')),
+    path('maladies/', include('maladies.urls')),
+    path('deplacement/', include('deplacement.urls')),
 ]
+

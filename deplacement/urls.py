@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path 
 
-from .views import naissance_view
+from .views import deplacement
 
 urlpatterns = [
-    path('naissance/', naissance_view, name='naissance'), 
+    path('deplacement/', deplacement, name='deplacement'), 
     # path('deces/', deces_view, name='deces'), 
 ]
