@@ -10,7 +10,7 @@ class Pharmacy(models.Model):
     start_date = models.DateTimeField(auto_now=True)
     end_date = models.DateTimeField(auto_now=True)
     Pharmacist_holder = models.CharField(max_length=255)
-    image = models.ImageField(max_length=255)
+    image = models.ImageField(upload_to='photos/pharmacie', null=True, blank=True)
     
     def __str__(self):
         return self.name

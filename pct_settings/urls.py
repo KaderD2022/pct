@@ -25,4 +25,6 @@ urlpatterns = [
     path('demande_emploie/', include('demande_emploie.urls')),
     path('pharmacie/', include('pharmacie.urls')),
     path('centre_sante/', include('centre_sante.urls')),
+    path('projet/', include('project.urls')),
+    path('naissances/', include('etat_de_vie.urls')),
 ]
