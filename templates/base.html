@@ -113,7 +113,7 @@
                         <div class="row">
                             <div class="col-sm-12 display_table">
                                 <div class="header_left_logo display_table_cell"> <a href="#" class="logo logo_with_text">
-                            <img src="images/logo.png" alt="">
+                            <img src="{% static 'images/LOGO KADER1.png'%}" alt="logo du site">
                             <span class="logo_text">
                                 ALLAKRO
                                 <small class="highlight4">PORTAIL DE GESTION COMMUNAUTAIRE</small>
@@ -123,13 +123,14 @@
                                     <!-- main nav start -->
                                     <nav class="mainmenu_wrapper">
                                         <ul class="mainmenu nav sf-menu">
-                                            <li class="active"> <a href="index-2.html">Home</a>
+                                            <li class="active"> <a href="{% url 'home' %}">Home</a>
                                                 <ul>
-                                                    <li> <a href="index-2.html">Home</a> </li>
-                                                    <li> <a href="index-static.html">Home static intro</a> </li>
-                                                    <li> <a href="index-single.html">Home single page</a> </li>
+                                                    <li> <a href="{% url 'login' %}">Login</a> </li>
+                                                    <li> <a href="{% url 'register' %}">Register</a> </li>
+                                                    <li> <a href="{% url 'logout' %}">Logout</a> </li>
                                                 </ul>
                                             </li>
+                                            
                                             <li> <a href="about.html">Pages</a>
                                                 <ul>
                                                     <!-- features -->
@@ -195,190 +196,83 @@
                                                 </ul>
                                             </li>
                                             <!-- eof pages -->
-                                            <li> <a href="services.html">Services</a>
+                                            <li> <a href="#">Santé</a>
                                                 <ul>
-                                                    <li> <a href="services.html">Services</a> </li>
-                                                    <li> <a href="service-single.html">Single Service</a> </li>
+                                                    <li> <a href="{% url 'pharmacy' %}">Pharmacie</a> </li>
+                                                    <li> <a href="{% url 'center' %}">Single Service</a> </li>
+                                                    <li> <a href="{% url 'maladie' %}">Single Service</a> </li>
                                                 </ul>
                                             </li>
-                                            <li> <a href="#">Features</a>
-                                                <div class="mega-menu">
-                                                    <ul class="mega-menu-row">
-                                                        <li class="mega-menu-col"> <a href="#">Headers</a>
-                                                            <ul>
-                                                                <li> <a href="header1.html">Header Type 1</a> </li>
-                                                                <li> <a href="header2.html">Header Type 2</a> </li>
-                                                                <li> <a href="header3.html">Header Type 3</a> </li>
-                                                                <li> <a href="header4.html">Header Type 4</a> </li>
-                                                                <li> <a href="header5.html">Header Type 5</a> </li>
-                                                                <li> <a href="header6.html">Header Type 6</a> </li>
-                                                                <li> <a href="header7.html">Header Type 7</a> </li>
-                                                                <li> <a href="header8.html">Header Type 8</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col"> <a href="#">Side Menus</a>
-                                                            <ul>
-                                                                <li> <a href="header_side1.html">Slide Left Light</a> </li>
-                                                                <li> <a href="header_side2.html">Slide Right Light</a> </li>
-                                                                <li> <a href="header_side3.html">Push Left Light</a> </li>
-                                                                <li> <a href="header_side4.html">Push Right Light</a> </li>
-                                                                <li> <a href="header_side5.html">Slide Left Dark</a> </li>
-                                                                <li> <a href="header_side6.html">Slide Right Dark</a> </li>
-                                                                <li> <a href="header_side7.html">Push Left Dark</a> </li>
-                                                                <li> <a href="header_side8.html">Push Right Dark</a> </li>
-                                                                <li> <a href="header_side_superfish.html">Superfish Menu</a> </li>
-                                                                <li> <a href="header_side_sticked.html">Sticked Menu</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col"> <a href="breadcrumbs1.html">Breadcrumbs</a>
-                                                            <ul>
-                                                                <li> <a href="breadcrumbs1.html">Breadcrumbs 1</a> </li>
-                                                                <li> <a href="breadcrumbs2.html">Breadcrumbs 2</a> </li>
-                                                                <li> <a href="breadcrumbs3.html">Breadcrumbs 3</a> </li>
-                                                                <li> <a href="breadcrumbs4.html">Breadcrumbs 4</a> </li>
-                                                                <li> <a href="breadcrumbs5.html">Breadcrumbs 5</a> </li>
-                                                                <li> <a href="breadcrumbs6.html">Breadcrumbs 6</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col"> <a href="footer1.html">Footers</a>
-                                                            <ul>
-                                                                <li> <a href="footer1.html">Footer Type 1</a> </li>
-                                                                <li> <a href="footer2.html">Footer Type 2</a> </li>
-                                                                <li> <a href="footer3.html">Footer Type 3</a> </li>
-                                                                <li> <a href="footer4.html">Footer Type 4</a> </li>
-                                                                <li> <a href="footer5.html">Footer Type 5</a> </li>
-                                                                <li> <a href="footer6.html">Footer Type 6</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                        <li class="mega-menu-col"> <a href="copyright1.html">Copyrights</a>
-                                                            <ul>
-                                                                <li> <a href="copyright1.html">Copyrights 1</a> </li>
-                                                                <li> <a href="copyright2.html">Copyrights 2</a> </li>
-                                                                <li> <a href="copyright3.html">Copyrights 3</a> </li>
-                                                                <li> <a href="copyright4.html">Copyrights 4</a> </li>
-                                                                <li> <a href="copyright5.html">Copyrights 5</a> </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <!-- eof mega menu -->
-                                            </li>
+
                                             <!-- eof features -->
                                             <!-- gallery -->
-                                            <li> <a href="gallery-regular.html">Gallery</a>
+                                            <li> <a href="#">Référentiels</a>
                                                 <ul>
                                                     <!-- Gallery regular -->
-                                                    <li> <a href="gallery-regular.html">Gallery Regular</a>
+                                                    <li> <a href="#">Référentiel des métiers</a>
                                                         <ul>
-                                                            <li> <a href="gallery-regular.html">1 column</a> </li>
-                                                            <li> <a href="gallery-regular-2-cols.html">2 columns</a> </li>
-                                                            <li> <a href="gallery-regular-3-cols.html">3 columns</a> </li>
+                                                            <li> <a href="{% url 'order' %}">Métier</a> </li>
+
                                                         </ul>
                                                     </li>
                                                     <!-- eof Gallery regular -->
                                                     <!-- Gallery full width -->
-                                                    <li> <a href="gallery-fullwidth.html">Gallery Full Width</a>
+                                                    <li> <a href="#">Référentiel des compétances</a>
                                                         <ul>
-                                                            <li> <a href="gallery-fullwidth.html">2 column</a> </li>
-                                                            <li> <a href="gallery-fullwidth-3-cols.html">3 columns</a> </li>
-                                                            <li> <a href="gallery-fullwidth-4-cols.html">4 columns</a> </li>
+                                                            <li> <a href="{% url 'skill' %}">Compétances</a> </li>
+
                                                         </ul>
                                                     </li>
-                                                    <!-- eof Gallery full width -->
-                                                    <!-- Gallery extended -->
-                                                    <li> <a href="gallery-extended.html">Gallery Extended</a>
-                                                        <ul>
-                                                            <li> <a href="gallery-extended.html">1 column</a> </li>
-                                                            <li> <a href="gallery-extended-2-cols.html">2 columns</a> </li>
-                                                            <li> <a href="gallery-extended-3-cols.html">3 columns</a> </li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- eof Gallery extended -->
-                                                    <!-- Gallery carousel -->
-                                                    <li> <a href="gallery-carousel.html">Gallery Carousel</a>
-                                                        <ul>
-                                                            <li> <a href="gallery-carousel.html">1 column</a> </li>
-                                                            <li> <a href="gallery-carousel-2-cols.html">2 columns</a> </li>
-                                                            <li> <a href="gallery-carousel-3-cols.html">3 columns</a> </li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- eof Gallery carousel -->
-                                                    <!-- Gallery tile -->
-                                                    <li> <a href="gallery-tile.html">Gallery Tile</a> </li>
-                                                    <!-- eof Gallery tile -->
-                                                    <!-- Gallery left sidebar -->
-                                                    <li> <a href="gallery-left.html">Gallery Left Sidebar</a>
-                                                        <ul>
-                                                            <li> <a href="gallery-left.html">1 column</a> </li>
-                                                            <li> <a href="gallery-left-2-cols.html">2 columns</a> </li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- eof Gallery left sidebar -->
-                                                    <!-- Gallery right sidebar -->
-                                                    <li> <a href="gallery-right.html">Gallery Right Sidebar</a>
-                                                        <ul>
-                                                            <li> <a href="gallery-right.html">1 column</a> </li>
-                                                            <li> <a href="gallery-right-2-cols.html">2 columns</a> </li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- eof Gallery right sidebar -->
-                                                    <!-- Gallery item -->
-                                                    <li> <a href="gallery-single.html">Gallery Item</a>
-                                                        <ul>
-                                                            <li> <a href="gallery-single.html">Style 1</a> </li>
-                                                            <li> <a href="gallery-single2.html">Style 2</a> </li>
-                                                            <li> <a href="gallery-single3.html">Style 3</a> </li>
-                                                        </ul>
-                                                    </li>
-                                                    <!-- eof Gallery item -->
                                                 </ul>
-                                            </li>
-                                            <!-- eof Gallery -->
-                                            <!-- blog -->
-                                            <li> <a href="blog-right.html">Blog</a>
+                                            </li> 
+                                            <li> <a href="#">Employes</a>
                                                 <ul>
-                                                    <li> <a href="blog-right.html">Right Sidebar</a> </li>
-                                                    <li> <a href="blog-left.html">Left Sidebar</a> </li>
-                                                    <li> <a href="blog-full.html">No Sidebar</a> </li>
-                                                    <li> <a href="blog-mosaic.html">Blog Grid</a> </li>
-                                                    <li> <a href="blog-single-right.html">Post</a>
+                                                    <!-- Gallery regular -->
+                                                    <li> <a href="#">Demande employe</a>
                                                         <ul>
-                                                            <li> <a href="blog-single-right.html">Right Sidebar</a> </li>
-                                                            <li> <a href="blog-single-left.html">Left Sidebar</a> </li>
-                                                            <li> <a href="blog-single-full.html">No Sidebar</a> </li>
+                                                            <li> <a href="{% url 'demande' %}">Demander</a></li>
                                                         </ul>
                                                     </li>
-                                                    <li> <a href="blog-single-video-right.html">Video Post</a>
+                                                    <!-- eof Gallery regular -->
+                                                    <!-- Gallery full width -->
+                                                    <li> <a href="#">Voir demande</a>
                                                         <ul>
-                                                            <li> <a href="blog-single-video-right.html">Right Sidebar</a> </li>
-                                                            <li> <a href="blog-single-video-left.html">Left Sidebar</a> </li>
-                                                            <li> <a href="blog-single-video-full.html">No Sidebar</a> </li>
+                                                            <li> <a href="{% url 'affiche' %}">Voir</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li> <a href="#">Annonces d'employe</a>
+                                                        <ul>
+                                                            <li> <a href="{% url 'announcements' %}">Annonces</a></li>
                                                         </ul>
                                                     </li>
                                                 </ul>
-                                            </li>
-                                            <!-- eof blog -->
-                                            <!-- shop -->
-                                            <li> <a href="shop.html">Shop</a>
+                                            </li> 
+                                            <li> <a href="#">COMMUNAUTAIRE</a>
                                                 <ul>
-                                                    <li> <a href="shop.html">Shop</a> </li>
-                                                    <li> <a href="shop-product.html">Single Product</a> </li>
-                                                    <li> <a href="shop-cart.html">Shopping Cart</a> </li>
-                                                    <li> <a href="shop-checkout.html">Checkout</a> </li>
-                                                    <li> <a href="shop-register.html">Registration</a> </li>
+                                                    <!-- Gallery regular -->
+                                                    <li> <a href="#">Natalité et deces</a>
+                                                        <ul>
+                                                            <li> <a href="{% url 'naissance' %}">Naissance journaliére</a></li>
+                                                            <li> <a href="{% url 'naissance' %}">Deces journaliere</a></li>
+                                                        </ul>
+
+                                                    </li>
+                                                    <!-- eof Gallery regular -->
+                                                    <!-- Gallery full width -->
+                                                    <li> <a href="#">Mouvement des habitants</a>
+                                                        <ul>
+                                                            <li> <a href="{% url 'deplacement' %}">Anémagement</a></li>
+                                                            <li> <a href="{% url 'deplacement' %}">Denémagement</a></li>
+                                                        </ul>
+
+                                                    </li>
+                                                    <li> <a href="#">Projet de development</a>
+                                                        <ul>
+                                                            <li> <a href="{% url 'project' %}">Projet</a></li>
+                                                        </ul>
+                                                    </li>
                                                 </ul>
-                                            </li>
-                                            <!-- eof shop -->
-                                            <!-- contacts -->
-                                            <li> <a href="contact.html">Contacts</a>
-                                                <ul>
-                                                    <li> <a href="contact.html">Contact 1</a> </li>
-                                                    <li> <a href="contact2.html">Contact 2</a> </li>
-                                                    <li> <a href="contact3.html">Contact 3</a> </li>
-                                                    <li> <a href="contact4.html">Contact 4</a> </li>
-                                                </ul>
-                                            </li>
-                                            <!-- eof contacts -->
+                                            </li> 
                                         </ul>
                                     </nav>
                                     <!-- eof main nav -->
@@ -408,7 +302,8 @@
                                 </div>
                                 <div class="col-md-4 col-sm-6 col-xs-12 col-md-push-4 text-center">
                                     <div class="widget widget_text widget_about">
-                                        <div class="logo logo_with_text bottommargin_10"> <img src="images/logo.png" alt=""> <span class="logo_text">
+                                        <div class="logo logo_with_text bottommargin_10"> <img src="{% static 'images/LOGO KADER1.png'%}" alt="logo du site"> <span class="logo_text">
+                                            
                                     ALLAKRO
                                     <small class="highlight4">PORTAIL DE GESTON COMMUNAUTARE</small>
                                 </span> </div>
