@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2>Connectivité</h2>
+                    <ol class="breadcrumb greylinks">
+                        <li> <a href="{% url 'home' %}">
+                                Home
+                            </a> </li>
+                        <li class="active">Création de compte</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="ls section_padding_top_100 section_padding_bottom_100">
+        <div class="container">
+            <div class="row">
+                <form class="shop-register" role="form" action="{% url 'register' %}"  method="post">
+                        {% csrf_token %}
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="first_name"> <label for="first_name"
+                                    class="control-label">
+                                    <span class="grey">Nom :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="text" class="form-control " name="first_name" id="nom"
+                                    placeholder="Nom">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="last_name"> <label for="last_name"
+                                    class="control-label">
+                                    <span class="grey">Prénom :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="text" class="form-control " name="last_name" id="last_name"
+                                    placeholder="Prenom">
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="username"> <label for="username">
+                                    class="control-label">
+                                    <span class="grey">Nom d'utilisateur</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="text" class="form-control " name="username" id="username"
+                                    placeholder="Prenom">
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="email"> <label for="email"
+                                    class="control-label">
+                                    <span class="grey">Email :</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="email" class="form-control " name="email" id="email"
+                                    placeholder="Prenom">
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="password"> <label for="password"
+                                    class="control-label">
+                                    <span class="grey">Mot de pass :</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="password" class="form-control " name="password" id="password"
+                                    placeholder="Prenom">
+                            </div>
+                        </div>
+                
+                
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="numero"> <label for="numero"
+                                    class="control-label">
+                                    <span class="grey">Numero :</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="text" class="form-control " name="numero" id="numero"
+                                    placeholder="Prenom">
+                            </div>
+                        </div>
+                
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="image"> <label for="image"
+                                    class="control-label">
+                                    <span class="grey">Photo :</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="file" class="form-control " name="image" id="image"
+                                    placeholder="Votre photo">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="date_of_birth"> <label for="date_of_birth"
+                                    class="control-label">
+                                    <span class="grey">Date de naissance :</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="date" class="form-control " name="date_of_birth" id="date_of_birth"
+                                    placeholder="Votre date de naissance">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="place_of_birth"> <label for="place_of_birth"
+                                    class="control-label">
+                                    <span class="grey">Lieu de naissance :</span> :</span>
+                                    <span class="required">*</span>
+                                </label> <input type="text" class="form-control " name="place_of_birth" id="place_of_birth"
+                                    placeholder="Votre lieu de naissance">
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                          <div class="form-group"> <label for="genre" class="genre">
+                                  <span class="grey">Votre sexe:</span>
+                                  <span class="required">*</span>
+                              </label> <select name="genre" id="genre">
+                                  <option value="Aucun">Masculin</option>
+                                  <option value="Primaire">Féninin</option>
+                              </select> </div>
+
+            
+                        <div class="mb-3 form-check">
+                          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>
+                        <div class="col-sm-12"> <button type="submit" class="theme_button color1 topmargin_30">S'inscrire</button> <button type="reset" class="theme_button">Clear Form</button> </div>
+                </form>
+              </form>
+              <div class="test">
+                  <p>Vous avez un compte  connecter-vous?  <a href="{% url 'login' %}" onclick="alert('inscription reussit')">Créer un compte</a> </p>
+              </div>
+          </div>
+    
+            </div>
+        </div>
+    </section>
+
+
+</div>
+<!-- eof #box_wrapper -->
+</div>
+
+{% endblock %}

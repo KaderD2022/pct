@@ -26,26 +26,12 @@
     <!-- ici commence le php -->
                         {% for item in items %}
                         <div class="col-sm-6">
-                            <h3>{{ item.name }}</h3>
+                            <h3>{{ item.nom }}</h3>
                             <p>SYMPTOMS :   {{ item.symptoms }}   </p>
                          <p>TRAITEMENTS :   {{ item.traitements }}   </p>
                         </div>
                         {% endfor %}
-                        {% for  epidemie in epidemies %}
-                        
-                        <div class="col-sm-6">
-                            <h3>{{ epidemie.name }}</h3>
-                            <p>SYMPTOMS :   {{ epidemie.symptoms }}</p>
-                         <p>TRAITEMENTS :   {{ epidemie.traitements }}</p>
-                         <p>DATE DE DEBUT :  {{ epidemie.date_debut }}</p>
-                         <p>DATE DE FIN :   {{ epidemie.date_fin }}</p>
-                         <p>NOMBRE DE CAS :   {{ epidemie.nombre_cas }}</p>
-                         <p>NOMBRE DE  :   {{ epidemie.nombre_mort }}</p>
-                        </div>
-                        {% endfor %}
-
-    
-    
+     
                     </div>
             </div>
         </div>
@@ -56,11 +42,6 @@
 </div>
 
 {% endblock %}
-
-
-
-
-
 
 
 

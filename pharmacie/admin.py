@@ -3,13 +3,13 @@ from django.contrib import admin
 # Register your models here.
 
 
-from pharmacie.models import Pharmacy
+from pharmacie.models import Pharmacie
 
-class AdminpPharmacy(admin.ModelAdmin):
-     list_display = ('name','location','number_pharmacy','on_call_period', 'start_date', 'end_date','Pharmacist_holder','image')
-     search_fields = ('name', 'Pharmacist_holder')
-     ordering = ('name', 'Pharmacist_holder')
-     filter = ('name', 'Pharmacist_holder')
-     list_filter = ('name','Pharmacist_holder')
+class AdminpPharmacie(admin.ModelAdmin):
+    list_display = ('nom','localisation','numero_pharmacie','period_garde', 'date_debut', 'date_fin','Pharmacien_tituleur','image')
+    search_fields = ('nom','localisation','numero_pharmacie','period_garde', 'date_debut', 'date_fin','Pharmacien_tituleur','image')
+    ordering = ('nom','localisation','numero_pharmacie','period_garde', 'date_debut', 'date_fin','Pharmacien_tituleur','image')
+    filter = ('nom','localisation','numero_pharmacie','period_garde', 'date_debut', 'date_fin','Pharmacien_tituleur','image')
+    list_filter = ('nom','localisation','numero_pharmacie','period_garde', 'date_debut', 'date_fin','Pharmacien_tituleur','image')
 
-admin.site.register(Pharmacy, AdminpPharmacy)
+admin.site.register(Pharmacie, AdminpPharmacie)

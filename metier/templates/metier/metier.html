@@ -2,7 +2,7 @@
 {% block body %}
 
 Githuhpassword2023
-			<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+			<section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 text-center">
@@ -28,10 +28,9 @@ Githuhpassword2023
 								<div class="item-media"> <img src="https://www.xarala.co/blog/content/images/2022/03/200121-developpeur-web.jpeg" alt=""> </div>
 								<div class="item-content">
 									<header class="entry-header">
-										<h3 class="entry-title small"> <a href="service-single.html">{{forloop.counter}}  {{order.name}}</a> </h3>
+										<h3 class="entry-title small"> <a href="service-single.html">Métier : {{order.nom}} </a> </h3>
 									</header>
-                                    <h3 class="entry-title small"> <a href="service-single.html">{{order.sector}}</a> </h3>
-                                    <h3 class="entry-title small"> <a href="service-single.html">{{forloop.counter}}  {{order.skill}}</a> </h3>
+                                    <h3 class="entry-title small"> <a href="service-single.html">Secteur :  {{order.secteur}}</a> </h3>
 								</div>
                                 {% endfor %}
 							</article>

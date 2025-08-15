@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block body %}
 
-			<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+			<section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-12 text-center">
@@ -23,19 +23,26 @@
 						<div class="col-md-4 col-sm-6">
 							
 							<article class="vertical-item content-padding big-padding with_border bottom_color_border loop-color text-center">
+
                                 
-								<div class="item-media"> <img src="{{pharmacy.image}}" alt=""> </div>
+								<div class="item-media"> <img src="/{{pharmacy.image}}" alt=""> </div>
 								<div class="item-content">
 									<header class="entry-header">
-										<h3 class="entry-title small"> <a href="service-single.html"> {{pharmacy.name}}</a> </h3>
-										<h3 class="entry-title small"> <a href="service-single.html"> {{pharmacy.Pharmacist_holder}}</a> </h3>
+										<h3 class="entry-title small"> {{pharmacy.nom}} </h3>
+										<h3 class="entry-title small"> {{pharmacy.Pharmacien_tituleur}}</h3>
 									</header>
-                                    <p class="entry-title small"> <a href="service-single.html">{{pharmacy.location}}</a> </p>
-                                    <p class="entry-title small"> <a href="service-single.html">{{pharmacy.on_call_period}}</a> </p>
-                                    <p class="entry-title small"> <a href="service-single.html">{{pharmacy.number_pharmacy}}</a> </p>
+
+                                    <p class="entry-title small"> {{pharmacy.localisation}}</p>
+                                    <p class="entry-title small"> {{pharmacy.period_garde}}</p>
+                                    <p class="entry-title small"> {{pharmacy.numero_pharmacie }} </p>
 
 								</div>
-                                
+								<div class="test">
+									<h5>  <a href="{{pharmacy.position_map}}">Position</a> </h5>
+								</div>
+
+
+
 							</article>
 							
 						</div>

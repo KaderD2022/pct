@@ -1,27 +1,27 @@
 from django.contrib import admin
 
 # Register your models here.
-from etat_de_vie.models import Birth, Death
+from etat_de_vie.models import Naissance, Deces
 
 
-class AdminBirth(admin.ModelAdmin):
-     list_display = ('name','gender','date_of_birth','way_of_birth', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     search_fields = ('name','gender','date_of_birth','way_of_birth', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     ordering = ('name','gender','date_of_birth','way_of_birth', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     filter = ('name','gender','date_of_birth','way_of_birth', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     list_filter = ('name','gender','date_of_birth','way_of_birth', 'name_of_father', 'name_of_mother', 'dwelling_place')
+class AdminNaissance(admin.ModelAdmin):
+     list_display = ('nom','genre','date_de_naissance','lieu_dela_naissance', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+     search_fields = ('nom','genre','date_de_naissance','lieu_dela_naissance', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+     ordering = ('nom','genre','date_de_naissance','lieu_dela_naissance', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+     filter = ('nom','genre','date_de_naissance','lieu_dela_naissance', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+     list_filter = ('nom','genre','date_de_naissance','lieu_dela_naissance', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
     
     
      
-class AdminDeath(admin.ModelAdmin):
-     list_display = ('name','gender','date_of_birth','date_of_death','way_of_birth', 'way_of_birth', 'reason_of_death', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     search_fields = ('name','gender','date_of_birth','date_of_death','way_of_birth', 'way_of_birth', 'reason_of_death', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     ordering = ('name','gender','date_of_birth','date_of_death','way_of_birth', 'way_of_birth', 'reason_of_death', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     filter = ('name','gender','date_of_birth','date_of_death','way_of_birth', 'way_of_birth', 'reason_of_death', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     list_filter = ('name','gender','date_of_birth','date_of_death','way_of_birth', 'way_of_birth', 'reason_of_death', 'name_of_father', 'name_of_mother', 'dwelling_place')
-     
+class AdminDeces(admin.ModelAdmin):
+        
+    list_display = ('nom','genre','date_de_naissance','date_de_deces','lieu_ode_deces',  'raison_du_deces', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitatio')
+    search_fields = ('nom','genre','date_de_naissance','date_de_deces','lieu_ode_deces',  'raison_du_deces', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+    ordering = ('nom','genre','date_de_naissance','date_de_deces','lieu_ode_deces',  'raison_du_deces', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+    filter = ('nom','genre','date_de_naissance','date_de_deces','lieu_ode_deces',  'raison_du_deces', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
+    list_filter = ('nom','genre','date_de_naissance','date_de_deces','lieu_ode_deces',  'raison_du_deces', 'nom_du_pere', 'nom_dela_mere', 'lieu_habitation')
 
 
-admin.site.register(Birth, AdminBirth)
-admin.site.register(Death, AdminDeath)
+    admin.site.register(Naissance, AdminNaissance)
+    admin.site.register(Deces)
 

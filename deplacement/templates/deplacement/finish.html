@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block body %}
-<section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+<section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
     <div class="container">
         <div class="row">
             <div class="col-sm-12 text-center">
@@ -42,17 +42,17 @@
                             <tbody>
                                  <!-- ici commence le php -->
                                  {% for finished in finisheds %}                     
-                                    <td> <a href="event-single-left.html" class="meetings">{{ finished.name}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ finished.nom}}</a> </td>
                                     
-                                    <td> <a href="event-single-left.html" class="meetings">{{ finished.gender}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ finished.genre}}</a> </td>
                                     
-                                    <td> <a href="event-single-left.html" class="">{{ finished.function}}</a> </td>
-                                    <td>{{ finished.origin}}</td>
-                                    <td>{{ finished.date_of_birth}}</td>
+                                    <td> <a href="event-single-left.html" class="">{{ finished.fonction}}</a> </td>
+                                    <td>{{ finished.origine}}</td>
+                                    <td>{{ finished.date_de_naissance }}</td>
                                     <td>{{ finished.Type_of_accommodation_on_arrival}}</td>
-                                    <td>{{ finished.name_of_father}}</td>
-                                    <td>{{ finished.name_of_mother}}</td>
-                                    <td>{{ finished.dwelling_place }}</td>
+                                    <td>{{ finished.nom_du_pere}}</td>
+                                    <td>{{ finished.nom_de_mere}}</td>
+                                    <td>{{ finished.lieu_habitation }}</td>
                                 </tr>
                                 <tr>	
                                 </tr>
@@ -71,8 +71,7 @@
                                     <th>Sexe</th>
                                     <th>Function</th>
                                     <th>Lieu d'habitation</th>
-                                    <th>Lieu de naissances</th>
-
+                                    <th>Date de naissances</th>
                                     <th>Nouvelle destination</th>
                                     
                                 </tr>
@@ -81,14 +80,15 @@
                             <tbody>
                                  <!-- ici commence le php -->
                                  {% for moved in moveds %}                     
-                                    <td> <a href="event-single-left.html" class="meetings">{{ moved.name}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ moved.nom}}</a> </td>
                                     
-                                    <td> <a href="event-single-left.html" class="meetings">{{ moved.gender}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ moved.genre}}</a> </td>
                                     
-                                    <td> <a href="event-single-left.html" class="">{{ moved.function}}</a> </td>
-                                    <td>{{ moved.date_of_birth}}</td>
-                                    <td>{{ moved.dwelling_place }}</td>
-                                    <td>{{ moved.New_destination }}</td>
+                                    <td> <a href="event-single-left.html" class="">{{ moved.fonction}}</a> </td>
+                                    
+                                    <td>{{ moved.lieu_habitation }}</td>
+                                    <td>{{ moved.date_de_naissance}}</td>
+                                    <td>{{ moved.nouvelle_destination }}</td>
                                 </tr>
                                 <tr>	
                                 </tr>

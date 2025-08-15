@@ -1,15 +1,15 @@
 from django.contrib import admin
 
-from metier.models import Job
+from metier.models import Metier
 
 # Register your models here.
-class AdminJob(admin.ModelAdmin):
-    list_display = ('name','sector', 'skill')
-    search_fields = ('name','sector', 'skill')
-    ordering = ('name','sector', 'skill')
-    filter = ('name','sector', 'skill')
-    list_filter = ('name','sector', 'skill')
+class AdminMetier(admin.ModelAdmin):
+    list_display = ('nom','secteur')
+    search_fields = ('nom','secteur')
+    ordering = ('nom','secteur')
+    filter = ('nom','secteur')
+    list_filter = ('nom','secteur')
 
 
-admin.site.register(Job, AdminJob)
+admin.site.register(Metier, AdminMetier)
 

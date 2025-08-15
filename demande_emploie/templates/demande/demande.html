@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% block body %}
 
-    <section class="page_breadcrumbs ds background_cover section_padding_top_65 section_padding_bottom_65">
+    <section class="page_breadcrumbs ds section_padding_top_65 section_padding_bottom_65">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <h2>DEMANDE EMPLOYE</h2>
+                    <h2>EMPLOYE</h2>
                     <ol class="breadcrumb greylinks">
                         <li> <a href="{% url 'home' %}">
                                 Home
                             </a> </li>
-                        <li class="active">Demande d'employe</li>
+                        <li class="inactive">DEMANDE EMPLOYE</li>
+                        <li class="active">DEMANDER</li>
                     </ol>
                 </div>
             </div>
@@ -22,20 +23,20 @@
                 <form class="shop-register" role="form" action="{% url 'demande' %}" method="post">
                         {% csrf_token %}
                         <div class="col-sm-6">
-                            <div class="form-group validate-required" id="first_name"> <label for="first_name"
+                            <div class="form-group validate-required" id="nom"> <label for="nom"
                                     class="control-label">
                                     <span class="grey">Nom :</span>
                                     <span class="required">*</span>
-                                </label> <input type="text" class="form-control " name="first_name" id="first_name"
+                                </label> <input type="text" class="form-control " name="nom" id="nom"
                                     placeholder="Nom">
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <div class="form-group validate-required" id="last_name"> <label for="last_name"
+                            <div class="form-group validate-required" id="prenom"> <label for="prenom"
                                     class="control-label">
                                     <span class="grey">Prénom :</span>
                                     <span class="required">*</span>
-                                </label> <input type="text" class="form-control " name="last_name" id="last_name"
+                                </label> <input type="text" class="form-control " name="prenom" id="prenom"
                                     placeholder="Prenom">
                             </div>
                         </div>
@@ -73,20 +74,20 @@
                                 </select> </div>
                         </div>
                         <div class="col-sm-4">
-                            <div class="form-group"> <label for="number" class="control-label">
+                            <div class="form-group"> <label for="numero" class="control-label">
                                     <span class="grey">Votre numero:</span>
                                     <span class="required">*</span>
-                                </label> <input type="text" class="form-control " name="number" id="number"
+                                </label> <input type="text" class="form-control " name="numero" id="numero"
                                     placeholder="Votre numero ou vos "></div>
                 
                 
                         </div>
         
                         <div class="col-sm-6">
-                            <div class="form-group validate-required" id="skill"> <label for="skill" class="control-label">
+                            <div class="form-group validate-required" id="competence"> <label for="competence" class="control-label">
                                     <span class="grey">Qualification/Competences</span>:</span>
                                     <span class="required">*</span>
-                                </label> <input type="text" class="form-control " name="skill" id="skill"
+                                </label> <input type="text" class="form-control " name="competence" id="competence"
                                     placeholder="Vos  qualification(s)/ compétence(s)">
                             </div>
                         </div>
@@ -102,26 +103,39 @@
                         </div>
             
         
-                        <div class="col-sm-12">
-                            <div class="form-group validate-required" id="domaine"> <label for="domaine" class="control-label">
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="metier"> <label for="metier" class="control-label">
                                     <span class="grey">Metier:</span>
                                     <span class="required">*</span>
-                                </label> <input type="text" class="form-control " name="domaine" id="domaine"
-                                    placeholder="Domaine souhaiter">
+                                </label> <input type="text" class="form-control " name="metier" id="metier"
+                                    placeholder="metier souhaiter">
+                            </div>
+                        </div>
+
+                        <div class="col-sm-6">
+                            <div class="form-group validate-required" id="email"> <label for="email" class="control-label">
+                                <div class="form-group validate-required" id="contenu"> <label for="email" class="control-label">
+                                    <span class="grey">Email:</span>
+                                    <span class="required">*</span>
+                                </label> <input type="text" class="form-control " name="email" id="email"
+                                    placeholder="Votre email">
                             </div>
                         </div>
             
                         <div class="col-sm-12">
-                            <div class="form-group validate-required" id="content"> <label for="content" class="control-label">
+                            <div class="form-group validate-required" id="contenu"> <label for="contenu" class="control-label">
+                                <div class="form-group validate-required" id="contenu"> <label for="contenu" class="control-label">
                                     <span class="grey">Message:</span>
                                     <span class="required">*</span>
-                                </label> <input type="text" class="form-control " name="content" id="content"
+                                </label> <input type="text" class="form-control " name="contenu" id="contenu"
                                     placeholder="message pour appuyer votre demande ou proposition">
                             </div>
                         </div>
             
+
+            
         
-                        <div class="col-sm-12"> <button type="submit" class="theme_button color1 topmargin_30">S'inscrire</button> <button type="reset" class="theme_button">Clear Form</button> </div>
+                        <div class="col-sm-6"> <button type="submit" class="theme_button color1 topmargin_30">S'inscrire</button> <button type="reset" class="theme_button">Clear Form</button> </div>
                 </form>
     
             </div>

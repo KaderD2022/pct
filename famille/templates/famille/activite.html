@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block body %}
+
+<section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>COMMUNAUTAIRE</h2>
+                <ol class="breadcrumb greylinks">
+                    <li> <a href="{% url 'home' %}">
+                            Home
+                        </a> </li>
+                    <li class="inactive">Autre</li>
+                    <li class="active">Activité</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="ls section_padding_top_100 section_padding_bottom_100 columns_padding_30">
+    <div class="container">
+        <div class="row">
+
+      <!-- ici commence le php -->
+   
+            <div class="col-sm-10 col-sm-push-1">
+                {% for activite in activites %} 
+                <article class="post side-item side-md content-padding with_border bottom_color_border left loop-color">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <div class="item-media"> <img src="/{{activite.image}}" alt="actualite1">
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="item-content">
+                                <header class="entry-header">
+                                    <div class="entry-meta greylinks inline-content"> <span>
+                                        
+                                    </span> <span>
+                                        
+                                    </span> </div>
+                                    <h3 class="entry-title small">{{activite.nom}}</h3>
+                                </header>
+                                <p>{{activite.contenu}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
+
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

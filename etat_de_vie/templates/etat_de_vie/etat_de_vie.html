@@ -33,6 +33,7 @@
                                     <th>Sexe</th>
                                     <th>Date de naissances</th>
                                     <th>Lieu de naissances</th>
+                                    <th>Heureuse Famille</th>
                                     <th>Nom du pere</th>
                                     <th>Nom de la mere</th>
                                     <th>Lieu d'habitation</th>      
@@ -42,14 +43,15 @@
                                  <!-- ici commence le php -->
                                  {% for naissance in    naissances %}                       
                                  <tr>
-                                    <td> <a href="event-single-left.html" class="meetings">{{ naissance.name}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ naissance.nom}}</a> </td>
                                     
-                                    <td> <a href="event-single-left.html" class="">{{ naissance.gender}}</a> </td>
-                                    <td>{{ naissance.date_of_birth}}</td>
-                                    <td>{{ naissance.way_of_birth}}</td>
-                                    <td>{{ naissance.name_of_father}}</td>
-                                    <td>{{ naissance.name_of_mother}}</td>
-                                    <td>{{ naissance.dwelling_place }}</td>
+                                    <td> <a href="event-single-left.html" class="">{{ naissance.genre}}</a> </td>
+                                    <td>{{ naissance.date_de_naissance}}</td>
+                                    <td>{{ naissance.lieu_dela_naissance}}</td>
+                                    <td>{{ naissance.famille}}</td>
+                                    <td>{{ naissance.nom_du_pere}}</td>
+                                    <td>{{ naissance.nom_dela_mere}}</td>
+                                    <td>{{ naissance.lieu_habitation }}</td>
                                 </tr>
                                 <tr>	
                                 </tr>
@@ -63,7 +65,6 @@
                         <br>
 
 
-
                         <table class="table_template darklinks" id="timetable">
                             <thead>
                                 <h2>Liste des décès</h2>
@@ -74,10 +75,11 @@
                                     <th>Date de naissances</th>
                                     <th>Date de Décès</th>
                                     <th>Lieu de Décès</th>
-                                    <th>Famille endeuiller</th>
+                                    <th>Raison du deces</th>
                                     <th>Nom du pere</th>
-                                    <th>nom de la mrer</th>
+                                    <th>nom de la mere</th>
                                     <th>Lieu d'habitation</th>
+                                    <th>Famille endeuiller</th>
                                     
                                 </tr>
                             </thead>
@@ -85,18 +87,19 @@
 
                                 {% for dece in deces %}  
                                 <tr>
-                                    <td> <a href="event-single-left.html" class="meetings">{{ dece.name}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ dece.nom}}</a> </td>
                                     
-                                    <td> <a href="event-single-left.html" class="">{{ dece.gender}}</a> </td>
-                                    <td> <a href="event-single-left.html" class="">{{ dece.function}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="">{{ dece.genre}}</a> </td>
+                                    <td> <a href="event-single-left.html" class="">{{ dece.fonction}}</a> </td>
 
-                                    <td>{{ dece.date_of_birth}}</td>
-                                    <td>{{ dece.date_of_death}}</td>
-                                    <td>{{ dece.way_of_birth}}</td>
-                                    <td>{{ dece.reason_of_death}}</td>
-                                    <td>{{ dece.name_of_father}}</td>
-                                    <td>{{ dece.name_of_mother}}</td>
-                                    <td>{{ dece.dwelling_place}}</td>
+                                    <td>{{ dece.date_de_naissance}}</td>
+                                    <td>{{ dece.date_de_deces}}</td>
+                                    <td>{{ dece.lieu_ode_deces}}</td>
+                                    <td>{{ dece.raison_du_deces }}</td>
+                                    <td>{{ dece.nom_du_pere}}</td>
+                                    <td>{{ dece.nom_de_mere }}</td>                                
+                                    <td>{{ dece.lieu_habitation }}</td>
+                                    <td>{{ dece.famille }}</td>
 
                                 </tr>
                                 <tr>	

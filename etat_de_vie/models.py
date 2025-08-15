@@ -1,56 +1,70 @@
 from django.db import models
+from centre_sante.models import centre_sante
+
+from famille.models import Centre_interet, Famille
 
 # Create your models here.
 
 
-class Birth(models.Model):
+class Naissance(models.Model):
     SEXE_CHOICES = (
         ('masculin', 'Masculin'),
         ('féminin', 'Féminin'),
-        ('personnalisé', 'Personnalisé'),
+
     )
     MODE_CHOICES = (
-        ('masculin', 'Masculin'),
-        ('féminin', 'Féminin'),
+        ('hopital', 'Hopital'),
+        ('a domicile', 'A domicile'),
     )
-    
-    name = models.CharField(max_length=255)
-    gender = models.CharField(choices=SEXE_CHOICES, max_length=20)
-    date_of_birth = models.DateField()
-    way_of_birth = models.CharField(choices=MODE_CHOICES, max_length=255)
-    name_of_father = models.CharField(max_length=255)
-    name_of_mother = models.CharField(max_length=255)  
-    dwelling_place = models.CharField(max_length=500, null=True, blank=True)
-    
+
+    nom = models.CharField(max_length=255)
+    genre = models.CharField(choices=SEXE_CHOICES, max_length=20)
+
+    date_de_naissance = models.DateField()
+    lieu_dela_naissance = models.CharField(choices=MODE_CHOICES, max_length=255)
+    nom_du_pere = models.CharField(max_length=255)
+    nom_dela_mere = models.CharField(max_length=255)  
+    lieu_habitation = models.CharField(max_length=500, null=True, blank=True)
+    famille = models.ForeignKey(Famille, on_delete=models.CASCADE, null=True, blank=True)
+    hopital = models.ForeignKey(centre_sante, on_delete=models.CASCADE, null=True, blank=True)
+    numero =  models.CharField(max_length=100, null=True, blank=True)
+    email =  models.EmailField(null=True, blank=True)
+    status = models.BooleanField(default=False, null=True, blank=True)
+ 
     
     def __str__(self):
-        return self.name
+        return self.nom
+
     
-class Death(models.Model):
+
+ 
+class Deces(models.Model):
     SEXE_CHOICES = (
         ('masculin', 'Masculin'),
         ('féminin', 'Féminin'),
-        ('personnalisé', 'Personnalisé'),
+
     )
     MODE_CHOICES = (
         ('hopital', 'Hopital'),
         ('a domicile', 'A domicile'),
     )
     
-    name = models.CharField(max_length=255)
-    gender = models.CharField(choices=SEXE_CHOICES, max_length=20)
-    function = models.CharField(max_length=255)
-    date_of_birth = models.DateField()
-    date_of_death = models.DateField()
-    way_of_birth = models.CharField(choices=MODE_CHOICES, max_length=255)
-    reason_of_death = models.CharField(max_length=100000)
-    name_of_father = models.CharField(max_length=255)
-    name_of_mother = models.CharField(max_length=255)  
-    dwelling_place = models.CharField(max_length=500, null=True, blank=True)
-    
-    
+    nom = models.CharField(max_length=255)
+    genre = models.CharField(choices=SEXE_CHOICES, max_length=20)
+    fonction = models.CharField(max_length=255)
+    date_de_naissance = models.DateField()
+    date_de_deces = models.DateField()
+    lieu_ode_deces = models.CharField(choices=MODE_CHOICES, max_length=255)
+    raison_du_deces = models.CharField(max_length=100000)
+    nom_du_pere = models.CharField(max_length=255)
+    nom_de_mere = models.CharField(max_length=255)  
+    lieu_habitation = models.CharField(max_length=500, null=True, blank=True)
+    famille = models.ForeignKey(Famille, on_delete=models.CASCADE, null=True, blank=True)
+    hopital = models.ForeignKey(centre_sante, on_delete=models.CASCADE, null=True, blank=True)
+    numero =  models.CharField(max_length=100, null=True, blank=True)
+    email =  models.EmailField(null=True, blank=True)
+    status = models.BooleanField(default=False, null=True, blank=True)
+ 
+     
     def __str__(self):
-        return self.name
-    
-    
-    
+        return self.nom

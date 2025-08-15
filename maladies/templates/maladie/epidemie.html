@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block body %}
+
+
+    <section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <h2> <u>EMPLOYE</u> </h2>
+                    <ol class="breadcrumb greylinks">
+                        <li class="inactive"> <a href="{% url 'home' %}">Home</a>
+                        <li class="inactive">Voir demande</li>
+                        <li class="inactive">Demande</li>
+                        <li class="active">Detail</li>
+                    </ol>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+			
+    <section class="ls section_padding_top_100 section_padding_bottom_100">
+        <div class="container">
+            <div class="row">
+                <div class="text-center col-sm-12 ">
+                    <div class="clearfix"></div>
+                    <div class="table-responsive">
+                        {% for  epidemie in epidemies %}
+                        <table class="table_template darklinks" id="timetable">
+                            <thead>
+                                <h2>{{ epidemie.nom }}</h2>
+                                <tr>
+                                    <th>SYMPTOMS</th>
+                                    <th>TRAITEMENTS/th>
+                                    <th>Date de debut</th>
+                                    <th>Date de fin</th>
+                                    <th>Nombre de cas</th>
+                                    <th>Nombre de mort</th>
+    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                 <!-- ici commence le php -->
+                                                    
+                                 <tr>
+                                    <td> <a href="event-single-left.html" class="meetings">{{ epidemie.symptoms }}</a> </td>
+                                    <td> <a href="event-single-left.html" class="">{{ epidemie.traitements }} </a> </td>
+                                    <td>{{ epidemie.date_debut }}</td>
+                                    <td>{{ epidemie.date_fin }}</td>
+                                    <td>{{ epidemie.nombre_cas }}</td>
+                                    <td>{{ epidemie.nombre_mort }}</td>
+
+                                </tr>
+                                <tr>	
+                                </tr>    
+
+                            <!-- Fin php -->
+                            </tbody>
+                    
+
+                        </table>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<!-- eof #box_wrapper -->
+</div>
+
+{% endblock %}

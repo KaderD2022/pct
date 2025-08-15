@@ -1,40 +1,58 @@
-from django.shortcuts import redirect, render
-
-from demande_emploie.models import demande_emploie
-
+from datetime import datetime
+from django.shortcuts import get_object_or_404, redirect, render
+from django.db.models import Q
+from demande_emploie.models import demande_emploie, Offre_emploi
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required
 def affiche_view(request):
     demandes = demande_emploie.objects.all()
     return render(request, 'demande/affiche_demande.html', {'demandes': demandes}) 
 
+@login_required
+def offre_view(request):
+    now = datetime.now()
+    offres = Offre_emploi.objects.all().filter(date_limite__gt=now)
+    return render(request, 'demande/offre_emploi.html', {'offres': offres}) 
+
+
+
+
+
+@login_required
+def detail_new(request, id):
+    demandes = get_object_or_404(demande_emploie, pk=id)
+    return render(request, 'demande/detail.html', {'demande': demandes})
+
+@login_required
 def demande_view(request): 
     if request.method == "POST":
-        first_name = request.POST.get('first_name')
-        print(first_name)
-        last_name = request.POST.get('last_name')
-        print(last_name)
+        nom = request.POST.get('nom')
+        prenom = request.POST.get('prenom')
         niveau_etude = request.POST.get('niveau_etude')
         print(niveau_etude)
         dernier_diplome = request.POST.get('dernier_diplome')
-        number = request.POST.get('dernier_diplome')
+        numero = request.POST.get('numero')
         print(dernier_diplome)
-        skill = request.POST.get('dernier_diplome')
+        competence = request.POST.get('competence')
         print(dernier_diplome)
-        image = request.POST.get('dernier_diplome')
+        image = request.POST.get('image')
         print(dernier_diplome)
-        domaine = request.POST.get('domaine')
-        content = request.POST.get('domaine')
-        print(domaine)
+        metier = request.POST.get('metier')
+        contenu = request.POST.get('contenu')
+        email = request.POST.get('email')
 
-        demande = demande_emploie.objects.create( first_name=first_name, last_name=last_name, niveau_etude=niveau_etude,
-        dernier_diplome=dernier_diplome, number=number, skill=skill, image=image, domaine=domaine, content=content)
+        demande = demande_emploie.objects.create( nom=nom, prenom=prenom, niveau_etude=niveau_etude,
+        dernier_diplome=dernier_diplome, numero=numero, competence=competence, image=image, metier=metier, contenu=contenu, email=email)
         print(demande)
+       
   
         print('Valideeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee')      
-        return redirect('home')
+        return redirect('affiche')
    
     else:
         print('non validesssssssssssssssssssssssssssssssssssssssssssssssssss')
         return render(request, 'demande/demande.html', )
+
+

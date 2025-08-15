@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block body %}
+
+<section class="page_breadcrumbs ds  section_padding_top_65 section_padding_bottom_65">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h2>COMMUNAUTAIRE</h2>
+                <ol class="breadcrumb greylinks">
+                    <li> <a href="{% url 'home' %}">
+                            Home
+                        </a> </li>
+                    <li class="inactive">Autre</li>
+                    <li class="active">Actualité</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="blog" class="ls section_padding_top_90 section_padding_bottom_110">
+    <div class="container">
+        <div class="row flex-wrap v-center">
+            <div class="col-sm-12 topmargin_30">
+                <div class="loop-colors">
+
+                    {% for actualite in actualites %} 
+                    <article class="post format-small-image to_animate" data-animation="fadeInRight">
+                        <div class="side-item side-md content-padding big-padding with_border bottom_color_border left">
+                            <div class="row">
+                                <div class="col-md-5 col-lg-4">
+                                    <div class="item-media entry-thumbnail"> <img src="/{{actualite.image}}" alt="actualité"> </div>
+                                </div>
+                                <div class="col-md-7 col-lg-8">
+                                    <div class="item-content">
+                                        <header class="entry-header">
+                                            <h3 class="entry-title small"> <a href="" rel="bookmark">{{ actualite.nom}}</a> </h3>
+                                            <div class="entry-meta inline-content greylinks"> <span>
+                                        <i class="fa fa-calendar highlight rightpadding_5" aria-hidden="true"></i>
+                                        <a href="blog-single-right.html">
+                                            <time datetime="2017-10-03T08:50:40+00:00">
+                                            17 jan, 2018</time>
+                                        </a>
+                                    </span> 
+
+                                        </header>
+                                        <div class="entry-content md-content-3lines-ellipsis">
+                                            <p>{{ actualite.contenu}} </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}
