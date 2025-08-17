@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-rr0y$2vzh^9he1vw)o!@d@d()#+4er)zn!!8vo%plz9i8e6s#m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 AUTH_USER_MODEL = 'compte.Habitant'
 LOGIN_REDIRECT_URL = 'login'
 LOGIN_URL = '/'
@@ -119,7 +119,17 @@ WSGI_APPLICATION = 'PCT.wsgi.application'
 #     }
 # }
 
+ALLOWED_HOSTS = [
+    'pct-online.onrender.com',
+    'www.votredomaine.com',  # Si vous avez un nom de domaine personnalisé
+    'localhost',             # Pour le développement local
+    '127.0.0.1'             # Pour le développement local
+]
 
+# Pour production sur Render
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 DATABASES = {
     'default': dj_database_url.config(
