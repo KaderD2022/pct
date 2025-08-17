@@ -123,10 +123,13 @@ WSGI_APPLICATION = 'PCT.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.environ.get('DATABASE_URL'),  # Render l'ajoute automatiquement
-        conn_max_age=600,
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=1000,
+        conn_health_checks=True,
+        engine='django.db.backends.postgresql'
     )
 }
+
 
 
 # Password validation
