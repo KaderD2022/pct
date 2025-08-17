@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 import os
 from pathlib import Path
 from .jazzmin import JAZZMIN_SETTINGS
-
+import dj_database_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIRS = os.path.join(BASE_DIR, 'templates')
@@ -91,15 +91,41 @@ WSGI_APPLICATION = 'PCT.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 
-DATABASES = {   
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'ma_db',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    }
+# DATABASES = {   
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql', 
+#         'NAME': 'ma_db',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'PORT': '3306',
+#     }
+# }
+
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'ma_db',          # Remplacez par le nom réel de votre base
+#         'USER': 'root',          # Remplacez par votre utilisateur MySQL
+#         'PASSWORD': 'root',  # Remplacez par un mot de passe fort
+#         'HOST': 'localhost',                  # Ou l'adresse IP de votre serveur MySQL
+#         'PORT': '3306',                       # Port par défaut MySQL
+#         'OPTIONS': {
+#             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+#             'charset': 'utf8mb4',
+#         },
+#         'CONN_MAX_AGE': 1000,  # Maintenir les connexions ouvertes 300 secondes
+#     }
+# }
+
+
+
+DATABASES = {
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),  # Render l'ajoute automatiquement
+        conn_max_age=600,
+    )
 }
 
 
