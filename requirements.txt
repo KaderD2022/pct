@@ -44,3 +44,6 @@ polib==1.2.0
 # Web server
 gunicorn==21.2.0
 whitenoise==6.6.0
+
+
+mysqlclient==2.2.1
